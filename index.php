@@ -65,10 +65,7 @@ if (!isset($_SESSION["logged"])) {
                             <form method='POST' action='show_user.php'>
                             <input type='hidden' name='user_id' value='" . $row->ID . "'>
                             <button type='submit'>Editar</button>
-                            </form>
-                            </td>
-                
-                            </tr>";
+                            </form></td></tr>";
                     }
                 } else {
                     echo "no se pudo conectar";

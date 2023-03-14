@@ -5,6 +5,8 @@
     $username = $_POST["user"];
     $password = $_POST["password"];
 
+    $password = md5($password."cursophp");
+
     $sql = "UPDATE usuarios set 
     Nombre = '".$name."', Usuario='".$username."', Password='".$password."' where ID=".$user_id;
     if ($query = mysqli_query($conn, $sql))

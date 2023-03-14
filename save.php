@@ -11,6 +11,8 @@ if ($name == "" || $user == "" || $password == "") {
     exit();
 }
 
+$password = md5($password."cursophp");
+
 if ($query = mysqli_query($conn, "INSERT into usuarios (Nombre, Usuario, Password) values ('" . $name . "', '" . $user . "', '" . $password . "')")) {
     echo "<h4>Usuario Registrado</h4>";
     echo "<a href='index.php'>Regresar</a>";

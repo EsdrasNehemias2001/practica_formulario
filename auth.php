@@ -3,7 +3,10 @@
     include ('connect.php');
     $user = $_POST["name2"];
     $password = $_POST["password2"];
-    $sql = "SELECT * FROM usuarios where Usuario='".$user."' && Password='".$password."'";
+
+    $password = md5($password."cursophp");
+
+    $sql = "SELECT * FROM usuarios where Usuario='".$user."' and Password='".$password."'";
     $query = mysqli_query($conn, $sql);
     if ($row = mysqli_fetch_object($query)){
         
