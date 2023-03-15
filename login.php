@@ -24,10 +24,10 @@
         <section class="login">
             <h3>INICIO DE SESION</h3>
             <div class="row">
-                <input class ="row2" type="text" name="name2" placeholder="Ingrese su usuario"/>
+                <input class ="row2" type="text" name="name" placeholder="Ingrese su usuario"/>
             </div>
             <div class="row">
-                <input class ="row2" type="password" name="password2" placeholder="Ingrese su contraseña"/>
+                <input class ="row2" type="password" name="password" placeholder="Ingrese su contraseña"/>
             </div>
             <div class="row">
                 <button class="btnPrimary" type="submit">Iniciar Sesion</button>

@@ -1,12 +1,12 @@
 <?php
     session_start();
     include ('connect.php');
-    $user = $_POST["name2"];
-    $password = $_POST["password2"];
-
+    $user = $_POST["name"];
+    $password = $_POST["password"];    
     $password = md5($password."cursophp");
 
-    $sql = "SELECT * FROM usuarios where Usuario='".$user."' and Password='".$password."'";
+    $sql = "SELECT * FROM usuarios where Usuario='".$user."' && Password='".$password."'";
+    
     $query = mysqli_query($conn, $sql);
     if ($row = mysqli_fetch_object($query)){
         

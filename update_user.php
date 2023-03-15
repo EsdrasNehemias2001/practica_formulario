@@ -4,7 +4,6 @@
     $name = $_POST["name"];
     $username = $_POST["user"];
     $password = $_POST["password"];
-
     $password = md5($password."cursophp");
 
     $sql = "UPDATE usuarios set 
