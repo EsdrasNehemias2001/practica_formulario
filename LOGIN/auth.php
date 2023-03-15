@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include ('../LOGIN/connect.php');
+    include ('connect.php');
     $user = $_POST["name"];
     $password = $_POST["password"];    
     $password = md5($password."cursophp");
@@ -16,10 +16,11 @@
         $_SESSION["user"] = $row->Usuario;
         $_SESSION["pass"] = $row->Password;
 
-        header("Location: index.php");
+        header("Location: menu.php");
     }
     else{
-        echo "Datos no válidos<br>";
-        echo "<a href='../LOGIN/login.php'>Regresar</a>";
+        /*echo "Datos no válidos<br>";
+        echo "<a href='../LOGIN/login.php'>Regresar</a>";*/
+        echo "<script>alert('Datos invalidos');window.location='../LOGIN/login.php'</script>";
     }
 ?>

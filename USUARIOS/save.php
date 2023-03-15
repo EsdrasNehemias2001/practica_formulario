@@ -13,11 +13,13 @@ if ($name == "" || $user == "" || $password == "") {
 }
 
 if ($query = mysqli_query($conn, "INSERT into usuarios (Nombre, Usuario, Password) values ('" . $name . "', '" . $user . "', '" . $password . "')")) {
-    echo "<h4>Usuario Registrado</h4>";
-    echo "<a href='index.php'>Regresar</a>";
+    /*echo "<h4>Usuario Registrado</h4>";
+    echo "<a href='index.php'>Regresar</a>";*/
+    echo "<script>alert('Usuario Registrado: $user');window.location='index.php'</script>";
 } else {
-    echo "Usuario No Registrado";
-    echo "<a href='registrar.php'>Regresar</a>";
+    /*echo "Usuario No Registrado";
+    echo "<a href='registrar.php'>Regresar</a>";*/
+    echo "<script>alert('Usuario No Registrado');window.location='index.php'</script>";
 }
 mysqli_close($conn);
 

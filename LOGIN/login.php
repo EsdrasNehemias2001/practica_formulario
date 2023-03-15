@@ -20,7 +20,7 @@
     <h1 class="titulo">LOGIN DE USUARIOS</h1>
 </header>
 <body>
-    <form method="POST" action="../USUARIOS/auth.php">
+    <form method="POST" action="auth.php">
         <section class="login">
             <h3>INICIO DE SESION</h3>
             <div class="row">
