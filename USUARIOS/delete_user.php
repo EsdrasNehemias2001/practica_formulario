@@ -1,5 +1,5 @@
 <?php
-include("connect.php");
+include("../LOGIN/connect.php");
 $user_id = $_POST["user_id"];
 if ($user_id <= 0) {
     echo "Usuario no válido<br>";

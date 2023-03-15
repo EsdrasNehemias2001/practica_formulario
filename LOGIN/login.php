@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <title>LOGIN</title>
 </head>
 <style>
@@ -20,7 +20,7 @@
     <h1 class="titulo">LOGIN DE USUARIOS</h1>
 </header>
 <body>
-    <form method="POST" action="auth.php">
+    <form method="POST" action="../USUARIOS/auth.php">
         <section class="login">
             <h3>INICIO DE SESION</h3>
             <div class="row">

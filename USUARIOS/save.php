@@ -1,5 +1,5 @@
 <?php
-include('connect.php');
+include('../LOGIN/connect.php');
 
 $name = $_POST["name"];
 $user = $_POST["user"];

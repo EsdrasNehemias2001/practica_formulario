@@ -1,8 +1,19 @@
 <?php
 session_start();
 if (!isset($_SESSION["logged"])) {
-    header("Location: login.php");
+    header("Location: ../LOGIN/login.php");
 }
+
+include("../LOGIN/connect.php");
+$user_id = $_POST["user_id"];
+$sql = "SELECT * from usuarios where ID=" . $user_id;
+$query = mysqli_query($conn, $sql);
+if (!$row = mysqli_fetch_object($query)) {
+    echo "Usuario no existe<br>";
+    echo "<a href='index.php'>Regresar</a>";
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +23,8 @@ if (!isset($_SESSION["logged"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/style.css">
-    <title>REGISTRO</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <title>EDITAR</title>
 </head>
 <style>
     .titulo {
@@ -44,6 +55,12 @@ if (!isset($_SESSION["logged"])) {
         background-color: blue;
     }
 
+    input {
+        border: 1px solid gray;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
     .btnExit {
         border: 1px solid ivory;
         border-radius: 5px;
@@ -55,39 +72,30 @@ if (!isset($_SESSION["logged"])) {
         font-size: 16px;
         text-align: center;
     }
-
-    input {
-        border: 1px solid gray;
-        padding: 5px;
-        border-radius: 10px;
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-    }
 </style>
 <header>
-    <h1 class="titulo">REGISTRO DE USUARIOS</h1>
+    <h1 class="titulo">EDITAR DATOS DE USUARIO</h1>
 </header>
 
 <body>
-    <form method="POST" action="save.php">
+    <form method="POST" action="update_user.php">
         <section class="formulario">
+
+            <input type="hidden" name="user_id" value="<?php echo $row->ID ?>">
             <div class="row">
-                <label class="nombre">Nombre:</label>
-                <input type="text" name="name" placeholder="Ingrese su nombre" />
+                <label class="Nombre">Nombre:</label>
+                <input type="text" name="name" value="<?php echo $row->Nombre ?>" />
             </div>
             <div class="row">
-                <label class="usuario">Usuario:</label>
-                <input type="text" name="user" placeholder="Ingrese nombre de usuario" />
+                <label>Usuario:</label>
+                <input type="text" name="user" value="<?php echo $row->Usuario ?>" />
             </div>
             <div class="row">
-                <label class="contraseña" for="fecha">Contraseña:</label>
-                <input type="password" name="password" placeholder="Ingrese una contraseña" />
+                <label>Password:</label>
+                <input type="password" name="password" value="<?php echo $row->Password ?>" />
             </div>
             <div class="row">
-                <button class="btnPrimary" type="submit">Registrar</button>
+                <button class="btnPrimary" type="submit">Actualizar</button>
             </div>
             <div class="row">
                 <a class="btnExit" href="index.php">Regresar</a>

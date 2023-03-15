@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include ('connect.php');
+    include ('../LOGIN/connect.php');
     $user = $_POST["name"];
     $password = $_POST["password"];    
     $password = md5($password."cursophp");
@@ -20,6 +20,6 @@
     }
     else{
         echo "Datos no válidos<br>";
-        echo "<a href='login.php'>Regresar</a>";
+        echo "<a href='../LOGIN/login.php'>Regresar</a>";
     }
 ?>
