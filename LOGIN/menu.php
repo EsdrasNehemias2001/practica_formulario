@@ -7,6 +7,7 @@ if (!isset($_SESSION["logged"])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,17 +16,34 @@ if (!isset($_SESSION["logged"])) {
     <title>MENU</title>
 </head>
 <style>
-    .titulo{
-    color: white;
-    text-decoration:underline;
-    text-align: center;
-    margin: 50px 10px 0px 10px;
-    font-family: 'Times New Roman', Times, serif, Courier, monospace;
-}
+    .titulo {
+        color: white;
+        text-decoration: underline;
+        text-align: center;
+        margin: 50px 10px 0px 10px;
+        font-family: 'Times New Roman', Times, serif, Courier, monospace;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .btnPrincipal {
+        margin: 25px 20px;
+    }
 </style>
+
+<section class="btnPrincipal">
+    <div class="btn2">
+        <a href="logout.php" class="tope">CERRAR SESION</a>
+    </div>
+</section>
+
 <header>
     <h1 class="titulo">MENU INICIAL</h1>
 </header>
+
 <body>
     <section class="index">
         <h3>SELECCIONE UNA OPCION</h3>
@@ -34,4 +52,5 @@ if (!isset($_SESSION["logged"])) {
         <!--<p><a class="atajo" href="alumnos.html">3. ALUMNOS</a></p>-->
     </section>
 </body>
+
 </html>

@@ -38,7 +38,7 @@ if (!isset($_SESSION["logged"])) {
         <a href="registro_alu.php" class="tope">REGISTRAR</a>
     </div>
     <div class="btn2">
-        <a href="../LOGIN/logout.php" class="tope">CERRAR SESION</a>
+        <a href="../LOGIN/menu.php" class="tope">REGRESAR</a>
     </div>
 </section>
 <header>

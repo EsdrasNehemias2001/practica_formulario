@@ -17,7 +17,7 @@
 }
 </style>
 <header>
-    <h1 class="titulo">LOGIN DE USUARIOS</h1>
+    <h1 class="titulo">LOGIN DE ACCESO</h1>
 </header>
 <body>
     <form method="POST" action="auth.php">
